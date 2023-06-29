@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import styled, { createGlobalStyle } from "styled-components";
 import bg from "../assets/me.png";
 
@@ -10,7 +11,6 @@ const Section = styled.div`
   scroll-snap-align: center;
   color: white;
   display: flex;
-
   justify-content: center;
 `;
 
@@ -104,16 +104,14 @@ const About = () => {
               <ColoredText color="#61DAFB"> Tailwind CSS.</ColoredText>
             </Desc>
             <Desc>
-            But wait, there's more! I'm also well-versed in the art of{" "}
-            <ColoredText color="#F08080">Material UI</ColoredText>,
-            <ColoredText color="#F08080">BootStrap</ColoredText>,
- and have even
-            tamed the powers of{" "}
-            <ColoredText color="#F08080">Node.js</ColoredText>. Because, you
-            know, frontend development is a walk in the park... or should I say,
-            a rocket science playground?.
+              But wait, there's more! I'm also well-versed in the art of{" "}
+              <ColoredText color="#F08080">Material UI</ColoredText>,
+              <ColoredText color="#F08080">BootStrap</ColoredText>, and have
+              even tamed the powers of{" "}
+              <ColoredText color="#F08080">Node.js</ColoredText>. Because, you
+              know, frontend development is a walk in the park... or should I
+              say, a rocket science playground?.
             </Desc>
-
           </Desc>
         </Right>
       </Container>
