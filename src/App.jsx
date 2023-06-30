@@ -32,7 +32,7 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <Container>
+      
         <Container>
           <Suspense fallback={<Loader />}>
             <Navbar />
@@ -42,7 +42,7 @@ function App() {
             <Contacts />
           </Suspense>
         </Container>
-      </Container>
+
     </>
   );
 }
