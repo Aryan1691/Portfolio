@@ -58,6 +58,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index:1;
   width: 100%;
   background: url("../src/assets/img.svg");
   background-position: 10% -114%;
@@ -75,15 +76,18 @@ const Navbar = () => {
       }
     }
   };
+const upward = ()=>{
+  window.scrollTo({ top:600, behavior: 'smooth' });
 
+}
   return (
     <Section>
       <Container>
         <Links>
-          <Logo src={name} />
-          <List className="list">
-            <ListItems onClick={activateItem("Home")} id="Home">
-              Home
+          <Logo onClick={upward} src={name} />
+          <List  className="list">
+            <ListItems onClick={activateItem("Home")} id="Home" >
+             <div >Home</div> 
             </ListItems>
             <ListItems onClick={activateItem("About")} id="About">
               About

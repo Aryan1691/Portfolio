@@ -79,9 +79,10 @@ const Img = styled.img`
 `;
 const HomeSection = () => {
   return (
-    <Section>
+    <Section  >
       <Navbar />
-      <Container>
+      <div id="Home"></div>
+      <Container >
         <Left src={bg}>
           <Title>Think. Make. Solve.</Title>
           <WhatIDo>

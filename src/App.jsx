@@ -13,12 +13,11 @@ import Projects from "./Components/Projects";
 import Loader from "./Components/Loader";
 
 import { Suspense } from "react";
+import Test from "./Components/Test";
 
 const Container = styled.div`
   height: 100vh;
-
   background: url("../src/assets/img.svg");
-
   background-repeat: no-repeat;
   background-size: cover;
   scroll-snap-type: y mandatory;
@@ -29,20 +28,20 @@ const Container = styled.div`
     display: none;
   }
 `;
+
 function App() {
   return (
     <>
-      
-        <Container>
-          <Suspense fallback={<Loader />}>
-            <Navbar />
-            <HomeSection />
-            <About />
-            <Projects />
-            <Contacts />
-          </Suspense>
-        </Container>
-
+      <Container>
+        <Suspense fallback={<Loader />}>
+          <Navbar />
+          <HomeSection />
+          <About />
+          <Projects />
+          <Contacts />
+          <Test/>
+        </Suspense>
+      </Container>
     </>
   );
 }

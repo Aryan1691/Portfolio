@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import Map from "./Map";
+import React from "react";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -18,16 +22,14 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top:80px;
 `;
 const Right = styled.div`
   flex: 1;
-  
 `;
 const Title = styled.div`
-  font-size:2rem;
-  font-weight:100;
-  
-  
+  font-size: 2rem;
+  font-weight: 100;
 `;
 const Form = styled.form`
   width: 500px;
@@ -86,23 +88,54 @@ const Button = styled.button`
     background-color: lightgreen;
   }
 `;
+
 const Contacts = () => {
+  const form = React.useRef();
+  const [success, setSuccess] = useState(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_bi11txu",
+        "template_d6fmlim",
+        form.current,
+        "3L0UQJah8Rpk_QGXC"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+          setTimeout(function() {
+            window.location.reload();
+          }, 4000);        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
   return (
     <Section>
       <Container>
         <Left>
-          <Form>
+          <Form ref={form} onSubmit={handleSubmit}>
             <Title>share your query</Title>
             {/* <a href="https://drive.google.com/file/d/1Y8q_n9BtA72rclPXYwM6rEl9ISbeNtgb/view">Click me </a> */}
-            <Input placeholder="name"></Input>
-
-            <Input placeholder="Email"></Input>
-            <TextArea placeholder="Write your message" rows={10}></TextArea>
-            <Button>Send</Button>
+            <Input placeholder="name" type="name" name="name"></Input>
+            <Input placeholder="Email" type="email" name="email"></Input>
+            <TextArea
+              placeholder="Write your message"
+              name="message"
+              rows={10}
+            ></TextArea>
+            <Button type="submit" >Send</Button>
+            {success &&
+                  
+              "Wow, your message made it! Brace yourself for our timely and mind-blowing response."}
           </Form>
         </Left>
         <Right>
-          <Map/>
+          <Map />
         </Right>
       </Container>
     </Section>

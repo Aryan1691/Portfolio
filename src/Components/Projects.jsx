@@ -34,6 +34,7 @@ const ListItems = styled.li`
   font-weight: bold;
   cursor: pointer;
   color: transparent;
+
   position: relative;
   -webkit-text-stroke: 1px white;
   ::after {
@@ -43,6 +44,7 @@ const ListItems = styled.li`
     left: 0;
     color: pink;
     width: 0;
+
     overflow: hidden;
     white-space: nowrap;
   }
@@ -77,7 +79,7 @@ const Projects = () => {
     { name: "Recippe", Link: "https://recippe.netlify.app/" },
   ];
   return (
-    <Section>
+    <Section id="Project">
       <Container>
         <Left>
           <List>
@@ -86,7 +88,6 @@ const Projects = () => {
                 <>
                   <ListItems key={index} text={items.name}>
                     <A href={items.Link} target="_blank">
-                      {/* {" "} */}
                       {items.name}
                     </A>
                   </ListItems>
