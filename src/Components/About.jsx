@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled, { createGlobalStyle } from "styled-components";
-import bg from "../assets/me.png";
+import bg from "../assets/me.webp";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
@@ -24,6 +24,12 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding-inline: 7%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0;
+  }
+
 `;
 
 const Left = styled.div`
@@ -38,6 +44,9 @@ const Left = styled.div`
 const Title = styled.h1`
   font-size: 74px;
   margin: 0;
+  @media only screen and (max-width: 768px) {
+    font-size: 50px;
+  }
 `;
 
 const Desc = styled.div`
@@ -47,6 +56,10 @@ const Desc = styled.div`
   letter-spacing: 2px;
   margin-top: 10px;
   font-family: "Varela Round", sans-serif;
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+    padding-inline: 5px;
+  }
 `;
 
 const Right = styled.div`
@@ -70,6 +83,11 @@ const Img = styled.img`
     to {
       transform: translateY(20px);
     }
+  }
+  @media only screen and (max-width: 768px) {
+    top: 0;
+    left: 0;
+    width: 300px;
   }
 `;
 

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import bg from "../assets/line.png";
-import photo from "../assets/photo.png";
-import line from "../assets/line.png";
+import bg from "../assets/line.webp";
+import photo from "../assets/photo.webp";
+import line from "../assets/line.webp";
 import { TypeAnimation } from "react-type-animation";
 
 const Section = styled.div`
@@ -11,19 +11,30 @@ const Section = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 768px) {
+    height: 100vh;
+  }
 `;
 
 const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  margin-top: 30px;
   width: 100%;
+  margin-top: -50px;
   display: flex;
-
   align-items: center;
   justify-content: center;
   padding-inline: 7%;
   padding-block: 10%;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-item: center;
+    text-align: center;
+    justify-content: center;
+    // margin-top: -100px;
+    padding-inline: 0;
+  }
 `;
 const Left = styled.div`
   flex: 2;
@@ -31,10 +42,20 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1px;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    text-align: center;
+    align-items: center;
+  }
 `;
 const Title = styled.h1`
   font-size: 74px;
   margin: 0;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    text-align: center;
+    font-size: 50px;
+  }
 `;
 const WhatIDo = styled.div`
   display: flex;
@@ -51,6 +72,9 @@ const Desc = styled.div`
   color: lightgrey;
   word-spacing: 1px;
   letter-spacing: 2px;
+  @media only screen and (max-width: 768px) {
+    padding-inline: 10px;
+  }
 `;
 const Line = styled.img`
   height: 5px;
@@ -59,6 +83,12 @@ const Line = styled.img`
 const Right = styled.div`
   flex: 3;
   position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+  }
 `;
 const Img = styled.img`
   width: 500px;
@@ -76,13 +106,22 @@ const Img = styled.img`
       transform: translateY(20px);
     }
   }
+  @media only screen and (max-width: 768px) {
+    width: 400px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    position: relative;
+  }
 `;
 const HomeSection = () => {
   return (
-    <Section  >
+    <Section>
       <Navbar />
       <div id="Home"></div>
-      <Container >
+      <Container>
         <Left src={bg}>
           <Title>Think. Make. Solve.</Title>
           <WhatIDo>

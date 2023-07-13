@@ -1,6 +1,5 @@
 // import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 // import {HashLink} from 'react-router-hash-link'
-import Navbar from "./Components/Navbar";
 import HomeSection from "./Components/HomeSection";
 import About from "./Components/About";
 import Contacts from "./Components/Contacts";
@@ -13,7 +12,6 @@ import Projects from "./Components/Projects";
 import Loader from "./Components/Loader";
 
 import { Suspense } from "react";
-import Test from "./Components/Test";
 
 const Container = styled.div`
   height: 100vh;
@@ -34,12 +32,11 @@ function App() {
     <>
       <Container>
         <Suspense fallback={<Loader />}>
-          <Navbar />
+          
           <HomeSection />
           <About />
           <Projects />
           <Contacts />
-          <Test/>
         </Suspense>
       </Container>
     </>

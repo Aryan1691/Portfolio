@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import name from "../assets/name.png";
+import name from "../assets/name.webp";
 
 const Section = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
   z-index:9;
+  @media only screen and (max-width:768px){
+    width:100%;
+  }
 `;
 
 const Links = styled.div`
@@ -13,17 +16,35 @@ const Links = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
+ 
 `;
 
 const Logo = styled.img`
   width: 15%;
   margin-right: 550px;
+  @media only screen and (max-width:768px){
+    width:50%;
+    margin-right:200px;
+    }
 `;
 
 const List = styled.ul`
   display: flex;
   gap: 30px;
   list-style-type: none;
+  @media only screen and (max-width:768px){
+    // flex-direction: column;
+    // position: absolute;
+    // width:100%;
+    // background-color:blue;
+    // padding: 10px;
+    // margin-top: 300px;
+    // justify-content: flex-start;
+    // align-items: center;
+    // border: 2px solid black;
+    // right: 0;
+    display:none;
+  }
 `;
 
 const ListItems = styled.li`
@@ -57,11 +78,13 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: relative;
   z-index:1;
   width: 100%;
-  background: url("../src/assets/img.svg");
-  background-position: 10% -114%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  @media only screen and (max-width:768px){
+    width:100%;
+  }
 `;
 
 const Navbar = () => {
@@ -98,7 +121,7 @@ const upward = ()=>{
             <ListItems onClick={activateItem("Project")} id="Project">
               Project
             </ListItems>
-            <ListItems onClick={activateItem("Contact")} id="Contact">
+            <ListItems  onClick={activateItem("Contact")} id="Contact">
               Contact
             </ListItems>
           </List>

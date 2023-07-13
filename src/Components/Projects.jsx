@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import bg1 from "../assets/Card1.webp";
+import bg2 from "../assets/Card2.webp";
+import bg3 from "../assets/Card3.webp";
+import bg4 from "../assets/Card4.webp";
+import { useState } from "react";
 
 const Section = styled.div`
   height: 100vh;
@@ -6,6 +11,7 @@ const Section = styled.div`
   color: white;
   display: flex;
   justify-content: center;
+  margin-top:100px;
 `;
 
 const Container = styled.div`
@@ -13,7 +19,12 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 999;
-  margin-top: 100px;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 `;
 const Left = styled.div`
   flex: 1;
@@ -27,6 +38,10 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media only screen and (max-width: 768px) {
+    justify-content:center;
+    padding:10px;
+  }
 `;
 
 const ListItems = styled.li`
@@ -44,6 +59,7 @@ const ListItems = styled.li`
     left: 0;
     color: pink;
     width: 0;
+    z-index: -1;
 
     overflow: hidden;
     white-space: nowrap;
@@ -58,9 +74,30 @@ const ListItems = styled.li`
       }
     }
   }
+  @media only screen and (max-width: 768px) {
+    font-size: 76px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 `;
 const Right = styled.div`
-  flex: 1;
+  flex: 2;
+  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: animate 2s infinite ease alternate;
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+    margin-left: 0;
+  }
 `;
 const A = styled.a`
   color: transparent;
@@ -70,24 +107,63 @@ const A = styled.a`
     color: transparent;
   }
 `;
-
+const ImgWrapper = styled.div`
+  width: 70%;
+  position: relative;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 0.3s ease-in-out;
+`;
+const Image = styled.img`
+  width: 100%;
+`;
 const Projects = () => {
   const data = [
-    { name: "DreamSoft", Link: "https://dreamsoft12.netlify.app/" },
-    { name: "Ximsa", Link: "https://ximsa.netlify.app/" },
-    { name: "Talkster", Link: "https://talkster.netlify.app/" },
-    { name: "Recippe", Link: "https://recippe.netlify.app/" },
+    {
+      name: "DreamSoft",
+      Link: "https://dreamsoft12.netlify.app/",
+      img: bg1,
+      id: 1,
+    },
+    { name: "Ximsa", Link: "https://ximsa.netlify.app/", img: bg2, id: 2 },
+    {
+      name: "Talkster",
+      Link: "https://talkster.netlify.app/",
+      img: bg3,
+      id: 3,
+    },
+    { name: "Recippe", Link: "https://recippe.netlify.app/", img: bg4, id: 4 },
   ];
+
+  const [hoveItemId, setHoverItemId] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+  const handleMouseEnter = (id) => {
+    setHoverItemId(id);
+  };
+  const handleMouseLeave = () => {
+    setHoverItemId(null);
+  };
+
   return (
     <Section id="Project">
       <Container>
         <Left>
           <List>
-            {data.map((items, index) => {
+            {data.map((items) => {
               return (
                 <>
-                  <ListItems key={index} text={items.name}>
-                    <A href={items.Link} target="_blank">
+                  <ListItems key={items.id} text={items.name}>
+                    <A
+                      onMouseEnter={() => {
+                        handleMouseEnter(items.id);
+                      }}
+                      onMouseLeave={handleMouseLeave}
+                      href={items.Link}
+                      target="_blank"
+                    >
                       {items.name}
                     </A>
                   </ListItems>
@@ -96,7 +172,43 @@ const Projects = () => {
             })}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {/* {data.map((item) => {
+            return (
+              <div key={item.id}>
+                {item.img ? (
+                  <>
+                    {hoveItemId === item.id ? (
+                      <ImgWrapper
+                        style={{    width: "70%",
+                        position: "relative",
+                        opacity: hoveItemId === item.id ? 1 : 0.3,
+                        transition: "opacity 0.5s ease",
+                      }}
+                        src={item.img}
+                        alt="images"
+                        onLoad={handleImageLoad}
+                      />
+                    ) : (
+                      hoveItemId === item.id && <Loader/>
+                    )}
+                  </>
+                ) : null}
+              </div>
+            );
+          })} */}
+
+          {data.map((item) => (
+            <ImgWrapper
+              key={item.id}
+              visible={hoveItemId === item.id && imageLoaded}
+            >
+              {hoveItemId === item.id ? (
+                <Image src={item.img} alt="images" onLoad={handleImageLoad} />
+              ) : null}
+            </ImgWrapper>
+          ))}
+        </Right>
       </Container>
     </Section>
   );
