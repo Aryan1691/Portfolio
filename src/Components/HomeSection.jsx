@@ -133,7 +133,7 @@ const A = styled.a`
   transition: 0.25s;
 
   &:hover {
-    color: black;
+    color: blue;
   }
 `;
 const HomeSection = () => {
