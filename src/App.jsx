@@ -17,9 +17,7 @@ import Navbar from "./Components/Navbar";
 
 const Container = styled.div`
   height: 100vh;
-  background: url("../src/assets/bgg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  
   // scroll-snap-type: y mandatory;
   // scroll-behavior: smooth;
   overflow-y: auto;
@@ -32,7 +30,11 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <Container>
+      <Container style={{
+background: "url(../src/assets/bgg.jpg)",
+backgroundRepeat:" no-repeat",
+backgroundSize: "cover",
+      }}>
         <Router>
           <Navbar />
           <Routes>
