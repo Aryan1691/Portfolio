@@ -17,7 +17,7 @@ import Navbar from "./Components/Navbar";
 
 const Container = styled.div`
   height: 100vh;
-  background: url("../src/assets/bgg.svg");
+  background: url("../src/assets/bgg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   // scroll-snap-type: y mandatory;
