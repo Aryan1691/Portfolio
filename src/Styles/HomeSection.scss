@@ -10,6 +10,11 @@ img{
     justify-content: center;
     
 }
+body{
+  background: url("../assets/img.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 }
 /* Hide the default scrollbar */
 ::-webkit-scrollbar {
