@@ -3,12 +3,14 @@ import Map from "./Map";
 import React from "react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   color: white;
   display: flex;
+  
   justify-content: center;
 `;
 const Container = styled.div`
@@ -36,7 +38,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
+  margin-top:-150px;
   @media only screen and (max-width: 768px) {
    width:200px;
   }
@@ -94,6 +96,14 @@ const Button = styled.button`
 `;
 
 const Contacts = () => {
+  AOS.init({
+    offset: 200,
+    duration: 800,
+    easing: 'ease-in-out',
+    delay: 100,
+    anchorPlacement: 'top-bottom',
+    once: true,
+  });
   const form = React.useRef();
   const [success, setSuccess] = useState(null);
   const handleSubmit = (e) => {
@@ -121,7 +131,7 @@ const Contacts = () => {
   return (
     <Section>
       <Container>
-        <Left>
+        <Left data-aos="fade-down-left">
           <Form ref={form} onSubmit={handleSubmit}>
             <Title>share your query</Title>
             {/* <a href="https://drive.google.com/file/d/1Y8q_n9BtA72rclPXYwM6rEl9ISbeNtgb/view">Click me </a> */}
@@ -138,7 +148,7 @@ const Contacts = () => {
               "Wow, your message made it! Brace yourself for our timely and mind-blowing response."}
           </Form>
         </Left>
-        <Right>
+        <Right data-aos="fade-up-right">
           <Map />
         </Right>
       </Container>

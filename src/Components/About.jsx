@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled, { createGlobalStyle } from "styled-components";
 import bg from "../assets/me.webp";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+  url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 `;
 
 const Section = styled.div`
@@ -17,7 +18,7 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  margin-top: 30px;
+  margin-top: -30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -29,7 +30,6 @@ const Container = styled.div`
     text-align: center;
     margin-top: 0;
   }
-
 `;
 
 const Left = styled.div`
@@ -97,39 +97,49 @@ const ColoredText = styled.span`
 `;
 
 const About = () => {
+  AOS.init({
+    offset: 200,
+    duration: 800,
+    easing: "ease-in-out",
+    delay: 100,
+    anchorPlacement: "top-bottom",
+    once: true,
+  });
   return (
     <Section>
       <GlobalStyle />
       <Container>
-        <Left>
+        <Left data-aos="fade-up" data-aos-duration="1000">
           <Img src={bg} />
         </Left>
-        <Right>
-          <Title>Aryan Khatik</Title>
-          <Desc>
+        <Right data-aos="fade-left" data-aos-duration="1100">
+          <Title data-aos="fade-right" data-aos-duration="1000">
+            Aryan Khatik
+          </Title>
+          <Desc >
             Oh, I've just successfully completed the esteemed FSD course at the
             Upgrad campus. As a highly skilled frontend developer, I possess a
             profound mastery of the ever-essential languages of{" "}
             <ColoredText color="#f7df1e">HTML5</ColoredText>,{" "}
             <ColoredText color="#f7df1e">CSS3</ColoredText>, and{" "}
             <ColoredText color="#f7df1e">JavaScript</ColoredText>.
-            <Desc>
-              {" "}
-              On top of that, I effortlessly navigate the realms of{" "}
-              <ColoredText color="#61DAFB">React.js</ColoredText>,{" "}
-              <ColoredText color="#61DAFB">Next.js</ColoredText>, and even
-              dabble in the trendy waters of
-              <ColoredText color="#61DAFB"> Tailwind CSS.</ColoredText>
-            </Desc>
-            <Desc>
-              But wait, there's more! I'm also well-versed in the art of{" "}
-              <ColoredText color="#F08080">Material UI</ColoredText>,
-              <ColoredText color="#F08080">BootStrap</ColoredText>, and have
-              even tamed the powers of{" "}
-              <ColoredText color="#F08080">Node.js</ColoredText>. Because, you
-              know, frontend development is a walk in the park... or should I
-              say, a rocket science playground?.
-            </Desc>
+          </Desc>
+          <Desc >
+            {" "}
+            On top of that, I effortlessly navigate the realms of{" "}
+            <ColoredText color="#61DAFB">React.js</ColoredText>,{" "}
+            <ColoredText color="#61DAFB">Next.js</ColoredText>, and even dabble
+            in the trendy waters of
+            <ColoredText color="#61DAFB"> Tailwind CSS.</ColoredText>
+          </Desc>
+          <Desc>
+            But wait, there's more! I'm also well-versed in the art of{" "}
+            <ColoredText color="#F08080">Material UI</ColoredText>,
+            <ColoredText color="#F08080">BootStrap</ColoredText>, and have even
+            tamed the powers of{" "}
+            <ColoredText color="#F08080">Node.js</ColoredText>. Because, you
+            know, frontend development is a walk in the park... or should I say,
+            a rocket science playground?.
           </Desc>
         </Right>
       </Container>

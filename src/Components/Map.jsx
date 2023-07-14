@@ -13,7 +13,7 @@ const Map = () => {
     <ComposableMap
       projection="geoMercator"
       projectionConfig={{
-        center: [78.9629, 25.5937], // Center the map on India by specifying its longitude and latitude
+        center: [78.9629, 21.5937], // Center the map on India by specifying its longitude and latitude
         scale: 850, // Adjust the scale as per your preference
       }}
       style={{ width: "100%", height: "100%" }}

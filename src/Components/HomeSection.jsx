@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import Navbar from "./Navbar";
 import bg from "../assets/line.webp";
 import photo from "../assets/photo.webp";
 import line from "../assets/line.webp";
 import { TypeAnimation } from "react-type-animation";
-
+import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
+import { AiOutlineFilePdf } from "react-icons/ai";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -20,7 +22,7 @@ const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   width: 100%;
-  margin-top: -50px;
+  margin-top: -80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,13 +118,37 @@ const Img = styled.img`
     position: relative;
   }
 `;
+const Docs = styled.div`
+  color: white;
+  z-index: 999;
+  display: flex;
+  font-size: 30px;
+  padding-top: 20px;
+  gap: 40px;
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: white;
+  transition: 0.25s;
+
+  &:hover {
+    color: black;
+  }
+`;
 const HomeSection = () => {
+  AOS.init({
+    offset: 200,
+    duration: 800,
+    easing: 'ease-in-out',
+    delay: 100,
+    anchorPlacement: 'top-bottom',
+    once: true,
+  });
   return (
     <Section>
-      <Navbar />
-      <div id="Home"></div>
       <Container>
-        <Left src={bg}>
+        <Left src={bg}  data-aos='fade-left'>
           <Title>Think. Make. Solve.</Title>
           <WhatIDo>
             <Line src={line} />
@@ -145,8 +171,42 @@ const HomeSection = () => {
           <Desc>
             I enjoy creating delightful,human-centered digital experiences.
           </Desc>
+          <Docs>
+            <A
+              href="https://github.com/aryan1691"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <IoLogoGithub />
+            </A>
+            <A
+              href="https://www.instagram.com/aryan_1691/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {" "}
+              <IoLogoInstagram />
+            </A>
+            <A
+              href="https://www.linkedin.com/in/aryan-khatik-2467a4253/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {" "}
+              <IoLogoLinkedin />
+            </A>
+            <A
+              href="https://drive.google.com/file/d/1Y8q_n9BtA72rclPXYwM6rEl9ISbeNtgb/view?usp=sharing"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {" "}
+              <AiOutlineFilePdf />
+            </A>
+          </Docs>
         </Left>
-        <Right>
+
+        <Right  data-aos='fade-right'>
           <Img src={photo} />
         </Right>
       </Container>

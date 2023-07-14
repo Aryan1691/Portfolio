@@ -1,43 +1,75 @@
-// import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-// import {HashLink} from 'react-router-hash-link'
-import HomeSection from "./Components/HomeSection";
-import About from "./Components/About";
-import Contacts from "./Components/Contacts";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 
 import "./App.css";
 import "./Styles/Loader.scss";
 import "./Styles/HomeSection.scss";
+const LazyHomeSection = React.lazy(() => import("./Components/HomeSection"));
+const LazyAbout = React.lazy(() => import("./Components/About"));
+const LazyContacts = React.lazy(() => import("./Components/Contacts"));
+const LazyProjects = React.lazy(() => import("./Components/Projects"));
+
 import styled from "styled-components";
-import Projects from "./Components/Projects";
 import Loader from "./Components/Loader";
 
 import { Suspense } from "react";
+import Navbar from "./Components/Navbar";
 
 const Container = styled.div`
   height: 100vh;
   background: url("../src/assets/img.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  // scroll-snap-type: y mandatory;
+  // scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  overflow-x: hidden;
 `;
 
 function App() {
   return (
     <>
       <Container>
-        <Suspense fallback={<Loader />}>
-          
-          <HomeSection />
-          <About />
-          <Projects />
-          <Contacts />
-        </Suspense>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <LazyHomeSection />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/About"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <LazyAbout />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/Project"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <LazyProjects />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/Contact"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <LazyContacts />
+                </Suspense>
+              }
+            />
+          </Routes>
+        </Router>
       </Container>
     </>
   );

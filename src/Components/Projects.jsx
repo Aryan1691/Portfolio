@@ -4,14 +4,15 @@ import bg2 from "../assets/Card2.webp";
 import bg3 from "../assets/Card3.webp";
 import bg4 from "../assets/Card4.webp";
 import { useState } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   color: white;
   display: flex;
   justify-content: center;
-  margin-top:100px;
+  margin-top: -45px;
 `;
 
 const Container = styled.div`
@@ -39,8 +40,8 @@ const List = styled.ul`
   flex-direction: column;
   gap: 20px;
   @media only screen and (max-width: 768px) {
-    justify-content:center;
-    padding:10px;
+    justify-content: center;
+    padding: 10px;
   }
 `;
 
@@ -76,9 +77,9 @@ const ListItems = styled.li`
   }
   @media only screen and (max-width: 768px) {
     font-size: 76px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    // justify-content:center;
+    // align-items:center;
   }
 `;
 const Right = styled.div`
@@ -97,6 +98,7 @@ const Right = styled.div`
     flex: 1;
     align-items: center;
     margin-left: 0;
+    margin-top: 20px;
   }
 `;
 const A = styled.a`
@@ -117,6 +119,14 @@ const Image = styled.img`
   width: 100%;
 `;
 const Projects = () => {
+  AOS.init({
+    offset: 200,
+    duration: 800,
+    easing: "ease-in-out",
+    delay: 100,
+    anchorPlacement: "top-bottom",
+    once: true,
+  });
   const data = [
     {
       name: "DreamSoft",
@@ -150,13 +160,14 @@ const Projects = () => {
   return (
     <Section id="Project">
       <Container>
-        <Left>
+        <Left data-aos="fade-up">
           <List>
             {data.map((items) => {
               return (
                 <>
                   <ListItems key={items.id} text={items.name}>
                     <A
+                      key={items.id}
                       onMouseEnter={() => {
                         handleMouseEnter(items.id);
                       }}
@@ -173,34 +184,9 @@ const Projects = () => {
           </List>
         </Left>
         <Right>
-          {/* {data.map((item) => {
-            return (
-              <div key={item.id}>
-                {item.img ? (
-                  <>
-                    {hoveItemId === item.id ? (
-                      <ImgWrapper
-                        style={{    width: "70%",
-                        position: "relative",
-                        opacity: hoveItemId === item.id ? 1 : 0.3,
-                        transition: "opacity 0.5s ease",
-                      }}
-                        src={item.img}
-                        alt="images"
-                        onLoad={handleImageLoad}
-                      />
-                    ) : (
-                      hoveItemId === item.id && <Loader/>
-                    )}
-                  </>
-                ) : null}
-              </div>
-            );
-          })} */}
-
-          {data.map((item) => (
+          {data.map((item, index) => (
             <ImgWrapper
-              key={item.id}
+              key={index}
               visible={hoveItemId === item.id && imageLoaded}
             >
               {hoveItemId === item.id ? (

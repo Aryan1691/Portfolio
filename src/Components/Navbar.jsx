@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import name from "../assets/name.webp";
+import { Link } from "react-router-dom";
 
 const Section = styled.div`
   display: flex;
@@ -26,6 +27,9 @@ const Logo = styled.img`
     width:50%;
     margin-right:200px;
     }
+    @media only screen and (max-width:768px){
+      display:none;
+    }
 `;
 
 const List = styled.ul`
@@ -43,7 +47,7 @@ const List = styled.ul`
     // align-items: center;
     // border: 2px solid black;
     // right: 0;
-    display:none;
+
   }
 `;
 
@@ -110,19 +114,16 @@ const upward = ()=>{
           <Logo onClick={upward} src={name} />
           <List  className="list">
             <ListItems onClick={activateItem("Home")} id="Home" >
-             <div >Home</div> 
+             <Link style={{color:"white"}} to={"/"} >Home</Link> 
             </ListItems>
             <ListItems onClick={activateItem("About")} id="About">
-              About
+             <Link style={{color:"white"}} to={"About"}>About</Link> 
             </ListItems>
-            {/* <ListItems onClick={activateItem("Certificates")} id="Certificates">
-              Certificates
-            </ListItems> */}
             <ListItems onClick={activateItem("Project")} id="Project">
-              Project
+             <Link style={{color:"white"}} to={"Project"}>Project</Link> 
             </ListItems>
             <ListItems  onClick={activateItem("Contact")} id="Contact">
-              Contact
+              <Link style={{color:"white"}} to={"Contact"}>Contact</Link>
             </ListItems>
           </List>
         </Links>
