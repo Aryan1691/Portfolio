@@ -63,11 +63,12 @@ const WhatIDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  color:#f6f6f6;
 `;
 const Subtitle = styled.p`
   font-size: 30px;
   font-weight: 700;
-  color: lightblue;
+  color: #ffcb74;
 `;
 const Desc = styled.div`
   font-size: 24px;
@@ -133,7 +134,7 @@ const A = styled.a`
   transition: 0.25s;
 
   &:hover {
-    color: blue;
+    color: #ffcb74;
   }
 `;
 const HomeSection = () => {

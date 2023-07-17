@@ -1,42 +1,57 @@
 import styled from "styled-components";
-import name from "../assets/name.webp";
 import { Link } from "react-router-dom";
 
 const Section = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  z-index:9;
-  @media only screen and (max-width:768px){
-    width:100%;
+  z-index: 9;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 
-const Links = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+const Text = styled.div`
+  
+  color: white;
+  padding-left: 20px;
+  font-size: 30px;
+  font-weight: 1000;
+  z-index: 999;
+  background-clip: text;
+  background: linear-gradient(30deg,  #ffcb74,#ffcb74,white);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation-name: back;
+animation-duration: 3s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+background-size: 200% 200%;
+
  
-`;
+  @media only screen and (max-width: 768px) {
+    width: 50%;
+    margin-right: 200px;
+  }
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+  @keyframes back {
+    
+    to{
+        background-position: 0% center;
 
-const Logo = styled.img`
-  width: 15%;
-  margin-right: 550px;
-  @media only screen and (max-width:768px){
-    width:50%;
-    margin-right:200px;
     }
-    @media only screen and (max-width:768px){
-      display:none;
+    from{
+        background-position: -200% center;
     }
+  }
 `;
-
 const List = styled.ul`
   display: flex;
   gap: 30px;
   list-style-type: none;
-  @media only screen and (max-width:768px){
+  @media only screen and (max-width: 768px) {
     // flex-direction: column;
     // position: absolute;
     // width:100%;
@@ -47,7 +62,6 @@ const List = styled.ul`
     // align-items: center;
     // border: 2px solid black;
     // right: 0;
-
   }
 `;
 
@@ -70,11 +84,12 @@ const ListItems = styled.li`
   }
   :hover::before {
     transform: scale(1);
+    border-radius: 20px;
   }
   &.active:before {
     transform: scale(1);
-    background-color: purple;
-
+    background-color: #ffcb74;
+    border-radius: 20px;
   }
 `;
 
@@ -83,11 +98,13 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index:1;
+  z-index: 1;
   width: 100%;
+  padding-block:10px;
+  padding-inline: 20px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  @media only screen and (max-width:768px){
-    width:100%;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -103,30 +120,33 @@ const Navbar = () => {
       }
     }
   };
-const upward = ()=>{
-  window.scrollTo({ top:600, behavior: 'smooth' });
 
-}
   return (
     <Section>
       <Container>
-        <Links>
-          <Logo onClick={upward} src={name} />
-          <List  className="list">
-            <ListItems onClick={activateItem("Home")} id="Home" >
-             <Link style={{color:"white"}} to={"/"} >Home</Link> 
-            </ListItems>
-            <ListItems onClick={activateItem("About")} id="About">
-             <Link style={{color:"white"}} to={"About"}>About</Link> 
-            </ListItems>
-            <ListItems onClick={activateItem("Project")} id="Project">
-             <Link style={{color:"white"}} to={"Project"}>Project</Link> 
-            </ListItems>
-            <ListItems  onClick={activateItem("Contact")} id="Contact">
-              <Link style={{color:"white"}} to={"Contact"}>Contact</Link>
-            </ListItems>
-          </List>
-        </Links>
+        <Text>Portfolio</Text>
+        <List className="list">
+          <ListItems onClick={activateItem("Home")} id="Home">
+            <Link style={{ color: "white" }} to={"/"}>
+              Home
+            </Link>
+          </ListItems>
+          <ListItems onClick={activateItem("About")} id="About">
+            <Link style={{ color: "white" }} to={"About"}>
+              About
+            </Link>
+          </ListItems>
+          <ListItems onClick={activateItem("Project")} id="Project">
+            <Link style={{ color: "white" }} to={"Project"}>
+              Project
+            </Link>
+          </ListItems>
+          <ListItems onClick={activateItem("Contact")} id="Contact">
+            <Link style={{ color: "white" }} to={"Contact"}>
+              Contact
+            </Link>
+          </ListItems>
+        </List>
       </Container>
     </Section>
   );

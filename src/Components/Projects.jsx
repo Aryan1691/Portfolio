@@ -117,6 +117,7 @@ const ImgWrapper = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
+  visibility:none;
 `;
 const Projects = () => {
   AOS.init({

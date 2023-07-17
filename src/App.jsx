@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
+import { Suspense } from "react";
 
 import "./App.css";
 import "./Styles/Loader.scss";
 import "./Styles/HomeSection.scss";
+import "./Styles/About.scss";
 const LazyHomeSection = React.lazy(() => import("./Components/HomeSection"));
 const LazyAbout = React.lazy(() => import("./Components/About"));
 const LazyContacts = React.lazy(() => import("./Components/Contacts"));
@@ -12,12 +14,11 @@ const LazyProjects = React.lazy(() => import("./Components/Projects"));
 import styled from "styled-components";
 import Loader from "./Components/Loader";
 
-import { Suspense } from "react";
 import Navbar from "./Components/Navbar";
 
 const Container = styled.div`
   height: 100vh;
-  
+
   // scroll-snap-type: y mandatory;
   // scroll-behavior: smooth;
   overflow-y: auto;
@@ -30,11 +31,13 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <Container style={{
-background: "url(../src/assets/bgg.jpg)",
-backgroundRepeat:" no-repeat",
-backgroundSize: "cover",
-      }}>
+      <Container
+        style={{
+          background: "url(../src/assets/bgg.jpg)",
+          backgroundRepeat: " no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
         <Router>
           <Navbar />
           <Routes>

@@ -1,0 +1,128 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
+// Import Google Fonts CSS
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+// Global Styles
+:global {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+//
+
+
+// Section Styles
+.Section {
+  height: 100vh;
+  scroll-snap-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+// Container Styles
+.Container {
+  height: 100vh;
+  scroll-snap-align: center;
+  margin-top: -30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding-inline: 7%;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+// Left Styles
+.Left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+}
+
+// Title Styles
+.Title {
+  font-size: 74px;
+  margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 50px;
+  }
+}
+
+// Description Styles
+.Desc {
+  font-size: 19px;
+  color: lightgrey;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-family: "Varela Round", sans-serif;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+    padding-inline: 5px;
+  }
+}
+
+// Right Styles
+.Right {
+  flex: 1;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+// Image Styles
+.Img {
+  width: 400px;
+  object-fit: contain;
+  position: relative;
+  top: -40px;
+  left: -50px;
+  right: 0px;
+  bottom: 0;
+  animation: animate 2s infinite ease alternate;
+
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    top: 0;
+    left: 0;
+    width: 300px;
+  }
+}
+
+// Colored Text Styles
+.ColoredText {
+  font-weight: 700;
+}
+
+// Colored Text Colors
+.ColoredText--yellow {
+  color: #f7df1e;
+}
+
+.ColoredText--blue {
+  color: #61dafb;
+}
+
+.ColoredText--red {
+  color: #f08080;
+}

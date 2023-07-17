@@ -1,0 +1,114 @@
+/* eslint-disable react/no-unescaped-entities */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+:global body {
+  margin: 0;
+  padding: 0;
+}
+
+.Section {
+  height: 100vh;
+  scroll-snap-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.Container {
+  height: 100vh;
+  scroll-snap-align: center;
+  margin-top: -30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding-inline: 7%;
+}
+@media only screen and (max-width: 768px) {
+  .Container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+.Left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+}
+
+.Title {
+  font-size: 74px;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .Title {
+    font-size: 50px;
+  }
+}
+
+.Desc {
+  font-size: 19px;
+  color: lightgrey;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-family: "Varela Round", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  .Desc {
+    font-size: 15px;
+    padding-inline: 5px;
+  }
+}
+
+.Right {
+  flex: 1;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.Img {
+  width: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  top: -40px;
+  left: -50px;
+  right: 0px;
+  bottom: 0;
+  animation: animate 2s infinite ease alternate;
+}
+@keyframes animate {
+  to {
+    transform: translateY(20px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Img {
+    top: 0;
+    left: 0;
+    width: 300px;
+  }
+}
+
+.ColoredText {
+  font-weight: 700;
+}
+
+.ColoredText--yellow {
+  color: #f7df1e;
+}
+
+.ColoredText--blue {
+  color: #61dafb;
+}
+
+.ColoredText--red {
+  color: #f08080;
+}/*# sourceMappingURL=About.css.map */
