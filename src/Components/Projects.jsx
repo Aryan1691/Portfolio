@@ -26,6 +26,11 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
   }
+  @media only screen and  (max-width: 375px) and (max-height: 667px){
+
+      margin-top: 160px;
+  }
+  
 `;
 const Left = styled.div`
   flex: 1;
@@ -38,7 +43,7 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   @media only screen and (max-width: 768px) {
     justify-content: center;
     padding: 10px;
@@ -46,19 +51,18 @@ const List = styled.ul`
 `;
 
 const ListItems = styled.li`
-  font-size: 89px;
+  font-size: 75px;
   font-weight: bold;
   cursor: pointer;
-  color: transparent;
 
   position: relative;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 10px #ffcb74;
   ::after {
     content: "${(props) => props.text}";
     position: absolute;
     top: 0;
     left: 0;
-    color: pink;
+    color: #ffcb74;
     width: 0;
     z-index: -1;
 
@@ -76,10 +80,10 @@ const ListItems = styled.li`
     }
   }
   @media only screen and (max-width: 768px) {
-    font-size: 76px;
+    font-size: 65px;
     display: flex;
-    // justify-content:center;
-    // align-items:center;
+    justify-content:center;
+    align-items:center;
   }
 `;
 const Right = styled.div`
@@ -98,7 +102,7 @@ const Right = styled.div`
     flex: 1;
     align-items: center;
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 120px;
   }
 `;
 const A = styled.a`
@@ -110,7 +114,7 @@ const A = styled.a`
   }
 `;
 const ImgWrapper = styled.div`
-  width: 70%;
+  width: 90%;
   position: relative;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;

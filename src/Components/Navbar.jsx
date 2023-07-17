@@ -12,23 +12,21 @@ const Section = styled.div`
 `;
 
 const Text = styled.div`
-  
-  color: white;
+  color: black;
   padding-left: 20px;
   font-size: 30px;
   font-weight: 1000;
   z-index: 999;
   background-clip: text;
-  background: linear-gradient(30deg,  #ffcb74,#ffcb74,white);
+  background: linear-gradient(30deg, #ffcb74, #ffcb74, white);
   -webkit-background-clip: text;
   color: transparent;
   animation-name: back;
-animation-duration: 3s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-background-size: 200% 200%;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-size: 200% 200%;
 
- 
   @media only screen and (max-width: 768px) {
     width: 50%;
     margin-right: 200px;
@@ -37,13 +35,11 @@ background-size: 200% 200%;
     display: none;
   }
   @keyframes back {
-    
-    to{
-        background-position: 0% center;
-
+    to {
+      background-position: 0% center;
     }
-    from{
-        background-position: -200% center;
+    from {
+      background-position: -200% center;
     }
   }
 `;
@@ -52,17 +48,12 @@ const List = styled.ul`
   gap: 30px;
   list-style-type: none;
   @media only screen and (max-width: 768px) {
-    // flex-direction: column;
-    // position: absolute;
-    // width:100%;
-    // background-color:blue;
-    // padding: 10px;
-    // margin-top: 300px;
-    // justify-content: flex-start;
-    // align-items: center;
-    // border: 2px solid black;
-    // right: 0;
+ gap:35px;
+ margin-right:30px;
   }
+  @media (max-width: 375px) and (max-height: 667px) {
+    gap:19px;
+    }
 `;
 
 const ListItems = styled.li`
@@ -74,7 +65,7 @@ const ListItems = styled.li`
     content: "";
     width: 100%;
     height: 3px;
-    margin-top: 7px;
+    margin-top: 9px;
     top: 20px;
     position: absolute;
     background-color: white;
@@ -100,13 +91,15 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  padding-block:10px;
+  padding-block: 10px;
   padding-inline: 20px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  @media only screen and (max-width: 768px) {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;  @media only screen and (max-width: 768px) {
     width: 100%;
+    justify-content:space-evenly;
+    text-align:center;
   }
-`;
+// `;
+
 
 const Navbar = () => {
   const activateItem = (id) => () => {
@@ -125,24 +118,25 @@ const Navbar = () => {
     <Section>
       <Container>
         <Text>Portfolio</Text>
+        {/* <Text1>AK</Text1> */}
         <List className="list">
           <ListItems onClick={activateItem("Home")} id="Home">
-            <Link style={{ color: "white" }} to={"/"}>
+            <Link style={{ color: "black" }} to={"/"}>
               Home
             </Link>
           </ListItems>
           <ListItems onClick={activateItem("About")} id="About">
-            <Link style={{ color: "white" }} to={"About"}>
+            <Link style={{ color: "black" }} to={"About"}>
               About
             </Link>
           </ListItems>
           <ListItems onClick={activateItem("Project")} id="Project">
-            <Link style={{ color: "white" }} to={"Project"}>
+            <Link style={{ color: "black" }} to={"Project"}>
               Project
             </Link>
           </ListItems>
           <ListItems onClick={activateItem("Contact")} id="Contact">
-            <Link style={{ color: "white" }} to={"Contact"}>
+            <Link style={{ color: "black" }} to={"Contact"}>
               Contact
             </Link>
           </ListItems>

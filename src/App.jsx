@@ -11,32 +11,16 @@ const LazyAbout = React.lazy(() => import("./Components/About"));
 const LazyContacts = React.lazy(() => import("./Components/Contacts"));
 const LazyProjects = React.lazy(() => import("./Components/Projects"));
 
-import styled from "styled-components";
 import Loader from "./Components/Loader";
-
 import Navbar from "./Components/Navbar";
 
-const Container = styled.div`
-  height: 100vh;
 
-  // scroll-snap-type: y mandatory;
-  // scroll-behavior: smooth;
-  overflow-y: auto;
-  scrollbar-width: none;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;
-  overflow-x: hidden;
-`;
 
 function App() {
   return (
     <>
-      <Container
-        style={{
-          background: "url(../src/assets/bgg.jpg)",
-          backgroundRepeat: " no-repeat",
-          backgroundSize: "cover",
-        }}
+      <div className="Container1"
+   
       >
         <Router>
           <Navbar />
@@ -75,7 +59,7 @@ function App() {
             />
           </Routes>
         </Router>
-      </Container>
+      </div>
     </>
   );
 }

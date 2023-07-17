@@ -20,12 +20,12 @@ const Map = () => {
     >
       <defs>
         <linearGradient id="customGradient" x1="1" y1="1" x2="1" y2="0">
-          <stop offset="25%" stopColor="lightgreen" />
-          <stop offset="35%" stopColor="white" />
-          <stop offset="100%" stopColor="#FF8300" />
+          <stop offset="25%" stopColor="#ffcb74" />
+          <stop offset="35%" stopColor="#ffcb74" />
+          <stop offset="100%" stopColor="white" />
         </linearGradient>
       </defs>
-      <Geographies geography="/features.json" stroke="white" strokeWidth={2}>
+      <Geographies geography="/features.json" stroke="black" strokeWidth={0.8}>
         {({ geographies }) =>
           geographies.map((geo) => (
             <Geography
@@ -51,7 +51,7 @@ const Map = () => {
           strokeLinecap: "round",
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
+        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="black">
           {"Maharashtra"}
         </text>
       </Annotation>

@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -34,7 +35,7 @@ const Title = styled.div`
   font-weight: 100;
 `;
 const Form = styled.form`
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -56,7 +57,7 @@ const Input = styled.input`
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   :focus {
-    background-color: lightgreen;
+    background-color: #ffcb74;
     color: black;
   }
 `;
@@ -73,7 +74,7 @@ const TextArea = styled.textarea`
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   :focus {
-    background-color: lightgreen;
+    background-color: #ffcb74;
     color: black;
   }
 `;
@@ -91,7 +92,7 @@ const Button = styled.button`
   :hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    background-color: lightgreen;
+    background-color: #ffcb74;
   }
 `;
 

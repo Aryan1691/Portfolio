@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import bg from "../assets/line.webp";
-import photo from "../assets/photo.webp";
+import photo from "../assets/photo1.webp";
 import line from "../assets/line.webp";
 import { TypeAnimation } from "react-type-animation";
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import { AiOutlineFilePdf } from "react-icons/ai";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: 768px) {
@@ -22,7 +22,7 @@ const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   width: 100%;
-  margin-top: -80px;
+   margin-top: -110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,11 +31,18 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
-    align-item: center;
+    align-items: center;
     text-align: center;
     justify-content: center;
-    // margin-top: -100px;
     padding-inline: 0;
+    margin-top: 0;
+
+    /* Default rule for all dimensions within max-width of 768px */
+
+    /* Add a new rule for iPhone SE */
+    @media (max-width: 375px) and (max-height: 667px) {
+      margin-top: 150px;
+    }
   }
 `;
 const Left = styled.div`
@@ -51,7 +58,7 @@ const Left = styled.div`
   }
 `;
 const Title = styled.h1`
-  font-size: 74px;
+  font-size: 70px;
   margin: 0;
   @media only screen and (max-width: 768px) {
     display: flex;
@@ -63,7 +70,7 @@ const WhatIDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  color:#f6f6f6;
+  color: #f6f6f6;
 `;
 const Subtitle = styled.p`
   font-size: 30px;
@@ -72,7 +79,7 @@ const Subtitle = styled.p`
 `;
 const Desc = styled.div`
   font-size: 24px;
-  color: lightgrey;
+  color: grey;
   word-spacing: 1px;
   letter-spacing: 2px;
   @media only screen and (max-width: 768px) {
@@ -94,7 +101,7 @@ const Right = styled.div`
   }
 `;
 const Img = styled.img`
-  width: 500px;
+  width: 280px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -110,7 +117,7 @@ const Img = styled.img`
     }
   }
   @media only screen and (max-width: 768px) {
-    width: 400px;
+    width: 280px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -130,7 +137,7 @@ const Docs = styled.div`
 
 const A = styled.a`
   text-decoration: none;
-  color: white;
+  color: black;
   transition: 0.25s;
 
   &:hover {
@@ -141,15 +148,15 @@ const HomeSection = () => {
   AOS.init({
     offset: 200,
     duration: 800,
-    easing: 'ease-in-out',
+    easing: "ease-in-out",
     delay: 100,
-    anchorPlacement: 'top-bottom',
+    anchorPlacement: "top-bottom",
     once: true,
   });
   return (
     <Section>
       <Container>
-        <Left src={bg}  data-aos='fade-left'>
+        <Left src={bg} data-aos="fade-left">
           <Title>Think. Make. Solve.</Title>
           <WhatIDo>
             <Line src={line} />
@@ -207,7 +214,7 @@ const HomeSection = () => {
           </Docs>
         </Left>
 
-        <Right  data-aos='fade-right'>
+        <Right data-aos="fade-right">
           <Img src={photo} />
         </Right>
       </Container>
