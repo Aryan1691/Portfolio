@@ -82,8 +82,8 @@ const ListItems = styled.li`
   @media only screen and (max-width: 768px) {
     font-size: 65px;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    // justify-content:center;
+    // align-items:center;
   }
 `;
 const Right = styled.div`

@@ -13,6 +13,9 @@ const Section = styled.div`
   display: flex;
   
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    margin-top:40px;
+     }
 `;
 const Container = styled.div`
   width: 100%;

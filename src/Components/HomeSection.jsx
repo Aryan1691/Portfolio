@@ -35,7 +35,7 @@ const Container = styled.div`
     text-align: center;
     justify-content: center;
     padding-inline: 0;
-    margin-top: 0;
+    margin-top: 120px;
 
     /* Default rule for all dimensions within max-width of 768px */
 
@@ -204,7 +204,7 @@ const HomeSection = () => {
               <IoLogoLinkedin />
             </A>
             <A
-              href="https://drive.google.com/file/d/1Y8q_n9BtA72rclPXYwM6rEl9ISbeNtgb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1u43QhK81e7EwE-TMu9__fOhxm9uXL2k3/view?usp=drive_link"
               rel="noreferrer"
               target="_blank"
             >
