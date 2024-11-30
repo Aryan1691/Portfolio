@@ -204,7 +204,7 @@ const HomeSection = () => {
               <IoLogoLinkedin />
             </A>
             <A
-              href="https://drive.google.com/file/d/10oYbWCaDSCjwqdsszUkeGu9xTa1A68oj/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1JLT4DMwMfrroDGFaTS9pzigJYmMYeYYe/view?usp=drive_link"
               rel="noreferrer"
               target="_blank"
             >

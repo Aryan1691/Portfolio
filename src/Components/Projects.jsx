@@ -26,11 +26,9 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
   }
-  @media only screen and  (max-width: 375px) and (max-height: 667px){
-
-      margin-top: 160px;
+  @media only screen and (max-width: 375px) and (max-height: 667px) {
+    margin-top: 160px;
   }
-  
 `;
 const Left = styled.div`
   flex: 1;
@@ -121,7 +119,7 @@ const ImgWrapper = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  visibility:none;
+  visibility: none;
 `;
 const Projects = () => {
   AOS.init({

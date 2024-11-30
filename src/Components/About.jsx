@@ -28,29 +28,21 @@ const About = () => {
             ARYAN KHATIK{" "}
           </h1>
           <div className="Desc">
-            I completed the esteemed FSD course at Upgrad, gaining expertise in
-            HTML5, CSS3, and JavaScript. Proficient in React.js, Next.js,
-            Tailwind CSS, and Material UI, I excel in frontend development. I've
-            also mastered Node.js for server-side development. With a passion
-            for pushing boundaries, frontend development is both a walk in the
-            park and a thrilling rocket science playground for me.
+            I’m Aryan Khatik, a skilled web development professional with
+            expertise in responsive user interfaces, bug resolution, and project
+            management. I played a key role in developing **"Brocus"**,
+            showcasing both technical and leadership abilities. While with
+            Madtech Solutions, I was assigned to **St. Lawrence School** for two
+            months to teach HTML, CSS, and JavaScript, guide students in
+            creating basic web projects, and enhance the school's web
+            application. Later, at **Programming.com**, I contributed to the
+            **Recruitment.AI** project by managing issues, designing technical
+            training sessions, and fostering a collaborative environment. I hold
+            certifications in **Full Stack Development** and **Advanced
+            JavaScript** from Upgrad, and **Responsive Web Design** from
+            FreeCodeCamp, strengthening my expertise in building robust web
+            applications.
           </div>
-          {/* <div className="Desc">
-            On top of that, I effortlessly navigate the realms of{" "}
-            <span className="ColoredText ColoredText--blue">React.js</span>,{" "}
-            <span className="ColoredText ColoredText--blue">Next.js</span>, and
-            even dabble in the trendy waters of{" "}
-            <span className="ColoredText ColoredText--blue">Tailwind CSS</span>.
-          </div>
-          <div className="Desc">
-            But wait, there's more! I'm also well-versed in the art of{" "}
-            <span className="ColoredText ColoredText--red">Material UI</span>,
-            <span className="ColoredText ColoredText--red">Bootstrap</span>, and
-            have even tamed the powers of{" "}
-            <span className="ColoredText ColoredText--red">Node.js</span>.
-            Because, you know, frontend development is a walk in the park... or
-            should I say, a rocket science playground?.
-          </div> */}
         </div>
       </div>
     </section>

@@ -3,19 +3,19 @@ import Map from "./Map";
 import React from "react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   color: white;
   display: flex;
-  
+
   justify-content: center;
   @media only screen and (max-width: 768px) {
-    margin-top:40px;
-     }
+    margin-top: 40px;
+  }
 `;
 const Container = styled.div`
   width: 100%;
@@ -28,7 +28,7 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top:80px;
+  margin-top: 80px;
 `;
 const Right = styled.div`
   flex: 1;
@@ -42,9 +42,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top:-150px;
+  margin-top: -150px;
   @media only screen and (max-width: 768px) {
-   width:200px;
+    width: 200px;
   }
 `;
 const Input = styled.input`
@@ -103,9 +103,9 @@ const Contacts = () => {
   AOS.init({
     offset: 200,
     duration: 800,
-    easing: 'ease-in-out',
+    easing: "ease-in-out",
     delay: 100,
-    anchorPlacement: 'top-bottom',
+    anchorPlacement: "top-bottom",
     once: true,
   });
   const form = React.useRef();
@@ -123,9 +123,10 @@ const Contacts = () => {
         (result) => {
           console.log(result.text);
           setSuccess(true);
-          setTimeout(function() {
+          setTimeout(function () {
             window.location.reload();
-          }, 4000);        },
+          }, 4000);
+        },
         (error) => {
           console.log(error.text);
           setSuccess(false);
@@ -146,9 +147,8 @@ const Contacts = () => {
               name="message"
               rows={10}
             ></TextArea>
-            <Button type="submit" >Send</Button>
+            <Button type="submit">Send</Button>
             {success &&
-                  
               "Wow, your message made it! Brace yourself for our timely and mind-blowing response."}
           </Form>
         </Left>

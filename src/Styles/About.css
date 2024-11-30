@@ -6,39 +6,40 @@
 }
 
 .Section {
-  height: 100vh;
+  height: calc(100vh - 60px); /* Adjust height to account for navbar height */
   scroll-snap-align: center;
   color: white;
-  display: flex;
-  justify-content: center;
+  display: flex; 
+   justify-content: space-between;
 }
 
 .Container {
   height: 100vh;
   scroll-snap-align: center;
-  margin-top: -30px;
+  /* margin-top: 30px; */
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  padding-inline: 7%;
+  padding-inline: 10%;
 }
 @media only screen and (max-width: 768px) {
   .Container {
     flex-direction: column;
     text-align: center;
-    margin-top: 0;
+    
+   padding-inline: 15px;  /* Add padding to prevent content touching edges */
   }
 }
 
 .Left {
-  flex: 1;
+  /* flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1px;
+  gap: 1px; */
 }
 
 .Title {
@@ -110,5 +111,5 @@
 }
 
 .ColoredText--red {
-  color: #f08080;
-}/*# sourceMappingURL=About.css.map */
+  color: #f08080; */
+}/*# sourceMappingURL=About.css.map

@@ -8,6 +8,7 @@ const Section = styled.div`
   z-index: 9;
   @media only screen and (max-width: 768px) {
     width: 100%;
+    
   }
 `;
 
@@ -27,13 +28,15 @@ const Text = styled.div`
   animation-iteration-count: infinite;
   background-size: 200% 200%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 668px) {
     width: 50%;
     margin-right: 200px;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 668px) {
+    
     display: none;
   }
+ */
   @keyframes back {
     to {
       background-position: 0% center;
@@ -45,11 +48,12 @@ const Text = styled.div`
 `;
 const List = styled.ul`
   display: flex;
+  
   gap: 30px;
   list-style-type: none;
   @media only screen and (max-width: 768px) {
  gap:35px;
- margin-right:30px;
+ margin-right:30%;
   }
   @media (max-width: 375px) and (max-height: 667px) {
     gap:19px;
@@ -86,10 +90,11 @@ const ListItems = styled.li`
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   position: relative;
   z-index: 1;
+  height: 60px; /* Adjust based on your design */
   width: 100%;
   padding-block: 10px;
   padding-inline: 20px;
@@ -97,6 +102,10 @@ const Container = styled.div`
     width: 100%;
     justify-content:space-evenly;
     text-align:center;
+    @media only screen and (max-width: 768px) {
+ /* gap:35px;*/
+ padding-right:50px;
+  }
   }
 // `;
 
